@@ -1,0 +1,32 @@
+name: Bootstrap Codeberg repo
+
+# One-off: creates the empty codeberg.org/fiscus/website-infrastructure repo
+# that the mirror workflow pushes to. Delete this file (and its branch) after
+# a successful run.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create repo under codeberg.org/fiscus
+        run: |
+          code=$(curl -s -o create.json -w "%{http_code}" -X POST \
+            -H "Authorization: token ${{ secrets.CODEBERG_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"website-infrastructure","description":"Static website infrastructure for fiscusproject.eu","private":false,"auto_init":false}' \
+            https://codeberg.org/api/v1/orgs/fiscus/repos)
+          cat create.json
+          echo "create status: $code"
+          [ "$code" = "201" ]
+      - name: Disable wiki to match brandbook
+        run: |
+          code=$(curl -s -o patch.json -w "%{http_code}" -X PATCH \
+            -H "Authorization: token ${{ secrets.CODEBERG_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"has_wiki":false}' \
+            https://codeberg.org/api/v1/repos/fiscus/website-infrastructure)
+          echo "patch status: $code"
+          [ "$code" = "200" ]
