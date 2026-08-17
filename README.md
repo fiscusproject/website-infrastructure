@@ -26,4 +26,4 @@ outputs, update the repository variables in the website repo's GitHub Actions se
 
 ## AI Policy
 
-The code in this repository was produced with AI assistance. All design decisions were made by the project maintainers, every line of code was human-reviewed, and the maintainers remain accountable for the accuracy and originality of the work.
+The code in this repository was produced with AI assistance. All decisions were made by the project maintainers, every line of code was human-reviewed, and the maintainers remain accountable for the accuracy and originality of the work.
