@@ -24,6 +24,12 @@ State lives in the `fiscus-website-tfstate` S3 bucket. After an apply that chang
 outputs, update the repository variables in the website repo's GitHub Actions settings
 (`AWS_DEPLOY_ROLE_ARN`, `S3_BUCKET`, `CLOUDFRONT_DISTRIBUTION_ID`).
 
+## License
+
+Licensed under the [MIT License](LICENSE). The Fiscus name and logo are **not** covered;
+their use is governed by the
+[trademark policy](https://github.com/fiscusproject/brandbook/blob/master/TRADEMARK.md).
+
 ## AI Policy
 
 The code in this repository was produced with AI assistance. All decisions were made by the project maintainers, every line of code was human-reviewed, and the maintainers remain accountable for the accuracy and originality of the work.
