@@ -10,4 +10,7 @@ on:
 jobs:
   mirror:
     uses: fiscusproject/.github/.github/workflows/mirror.yml@master
-    secrets: inherit
+    permissions:
+      contents: read
+    secrets:
+      CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}

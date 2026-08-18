@@ -36,6 +36,7 @@ environment variables — since nothing from the host is mounted in):
 
 ```sh
 terraform init
+erraform workspace select website
 terraform plan
 terraform apply
 ```
