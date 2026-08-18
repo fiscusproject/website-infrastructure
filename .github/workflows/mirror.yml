@@ -7,6 +7,12 @@ on:
   schedule:
     - cron: "17 4 * * 1" # weekly safety net in case an event-triggered run failed
 
+# push + delete events can fire together (e.g. merging a PR and deleting its
+# branch), and concurrent mirror pushes race on Codeberg's refs.
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+
 jobs:
   mirror:
     uses: fiscusproject/.github/.github/workflows/mirror.yml@master
