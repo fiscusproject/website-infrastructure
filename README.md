@@ -1,7 +1,9 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fiscusproject/brandbook/master/banner/fiscus-readme-1280x320-dark.png">
-  <img src="https://raw.githubusercontent.com/fiscusproject/brandbook/master/banner/fiscus-readme-1280x320-light.png" alt="Fiscus — free and open-source fiscalization" width="640">
-</picture>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fiscusproject/brandbook/master/banner/fiscus-readme-tagline-1280x320-dark.png">
+    <img src="https://raw.githubusercontent.com/fiscusproject/brandbook/master/banner/fiscus-readme-tagline-1280x320-light.png" alt="Fiscus — free and open-source fiscalization" width="640">
+  </picture>
+</p>
 
 # website-infrastructure
 
@@ -12,7 +14,25 @@ lets the website repo's GitHub Actions deploy without stored AWS keys. Secrets l
 
 ## Usage
 
-Requires [mise](https://mise.jdx.dev) (pins Terraform and sops) and AWS credentials.
+### In a dev container
+
+`.devcontainer/` defines a [Dev Pod](https://devpod.sh) that installs the
+pinned toolchain automatically:
+
+```sh
+devpod up . --ide vscode
+```
+
+### On your machine
+
+```sh
+mise install
+```
+
+### Plan and apply
+
+AWS credentials are required (in a dev container, provide them inside it — e.g. as
+environment variables — since nothing from the host is mounted in):
 
 ```sh
 terraform init
