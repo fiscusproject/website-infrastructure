@@ -14,8 +14,6 @@ lets the website repo's GitHub Actions deploy without stored AWS keys. Secrets l
 
 ## Usage
 
-The toolchain is pinned with [mise](https://mise.jdx.dev). Get it either way:
-
 ### In a dev container
 
 `.devcontainer/` defines a [Dev Pod](https://devpod.sh) that installs the
