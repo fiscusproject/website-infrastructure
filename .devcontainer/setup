@@ -1,0 +1,2 @@
+#!/bin/sh
+mise trust ./mise.toml && mise install
