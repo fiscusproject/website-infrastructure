@@ -1,2 +1,7 @@
 #!/bin/sh
-mise trust ./mise.toml && mise install
+set -e
+mise trust ./mise.toml
+if [ -f ./mise.local.toml ]; then
+    mise trust ./mise.local.toml
+fi
+mise install
