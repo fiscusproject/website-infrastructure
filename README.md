@@ -53,7 +53,7 @@ their use is governed by the
 
 ## AI Policy
 
-On October 22, 2026, we decided to fully align with the NLnet Foundation's AI policy requirements. From this date forward, AI will not be used to produce, edit, or manage code in this
+On October 22, 2026, we decided to fully align with the NLnet Foundation's AI policy requirements. From this date forward, AI will not be used to produce or edit code in this
 repository.
 
 [NLNet Foundation AI Policy Version 2.0](https://nlnet.nl/foundation/policies/generativeAI/2.0/)
